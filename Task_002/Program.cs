@@ -10,8 +10,7 @@ Console.Write("Введите число B = ");
 int numberB = Convert.ToInt32(Console.ReadLine());
 if (numberA > numberB)
   {
- //  numberA = IMinMaxValue 
-  Console.WriteLine($"max = {numberA}");  
+   Console.WriteLine($"max = {numberA}");  
   }
 else 
     Console.WriteLine($"max = {numberB}");  
