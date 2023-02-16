@@ -6,17 +6,13 @@
 Console.Write("Введите число 1 - ");
 int number = Convert.ToInt32(Console.ReadLine());   
 
-int result = Kratno(number);
-
-if (result == 0)
-  Console.Write($"да");
-else
-  Console.Write($"нет");
-
-bool Kratno (int num)
+bool Result(int num)
 {
-int kratno = num%7 & num%23;
-
-if (num%7) & (num%23);
-   return kratno; 
+  return (num % 7 == 0 && num % 23 == 0);
 }
+
+
+if (Result(number)) 
+  Console.WriteLine($"да");
+else
+  Console.WriteLine($"нет");
