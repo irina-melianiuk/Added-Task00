@@ -5,18 +5,20 @@
 Console.WriteLine("Введите номер четверти-- ");
 int number = Convert.ToInt32(Console.ReadLine());
 
+Console.WriteLine("Диапазон возможных точек в этой четверти:  " + Quarter(number));
 
-int quarter = Quarter(xc, yc);   
-string result = quarter > 0 
-                ? $"Указанные четверть соответствуют координатам {quarter}"
-                : "Введены некорректные координаты";
-Console.WriteLine(result);
+//
+//int quarter = Quarter(number);   
+ //               ? $"Указанные четверть соответствуют координатам {quarter}"
+ //               : "Введены некорректные координаты";
 
-int Quarter(int x, int y)
+
+string Quarter(int num)
 {
-    if  (num == 1) return (x > 0, y > 0);
-    if  (num == 2) return (x > 0, y < 0);
-    if  (num == 3) return (x < 0, y < 0);
-    if  (num == 4) return (x < 0, y > 0);
-    return 0;
+    if  (num == 1) return "x > 0, y > 0";
+    if  (num == 2) return "x > 0, y < 0";
+    if  (num == 3) return "x < 0, y < 0";
+    if  (num == 4) return "x < 0, y > 0";
+    return "нет такой четверти";
+   
 }
