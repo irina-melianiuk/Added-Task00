@@ -14,7 +14,7 @@ int Promt (string message)
 
 bool ValidateNumber(int number)
 {
-    if (number < 100000)
+    if (number > 10000 && number < 100000)
     {
         Console.WriteLine("Число проверяется на палиндромность.");
         return true;
