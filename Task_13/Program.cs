@@ -36,10 +36,7 @@ int Third2Digit(int num2)
       while (num2 >= 999)
       {
         num2 = num2 / 10; 
-        //return (num2);
       }
       int Third2Digit = num2 / 10;
-      //int LastDigit = Third2Digit % 10; 
-      //return (LastDigit);
       return (num2 - Third2Digit*10);
 }
