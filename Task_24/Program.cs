@@ -15,9 +15,12 @@ int SumNumber (int num) // num = number
   int sum = 0;
   for (int i = 0; i <= num; i++)
   {
-    sum = sum + i;
+    checked
+    {
+      sum = sum + i;
+    }
+  
   }
-
   return sum;
 }
 
