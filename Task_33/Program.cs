@@ -41,6 +41,6 @@ Console.WriteLine();
 Console.WriteLine($"Введите искомое число - ");
 int number = Convert.ToInt32(Console.ReadLine());
 bool existNum = FindArrayElement (array, number);
-Console.WriteLine(existNum ? "да" : "нет");
+Console.WriteLine(existNum == true ? "да" : "нет"); 
 
 
