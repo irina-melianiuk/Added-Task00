@@ -10,18 +10,25 @@ int number = Convert.ToInt32(Console.ReadLine());
 // Console.WriteLine($"Случайное число => {number}");
 
 int result = Multiplication(number);
-Console.WriteLine($"Результат умножения = {result}");
+if (number > 0)
+{
+  Console.WriteLine($"Результат умножения = {result}");
+}
+else
+{
+  Console.WriteLine($"Введите положительное число! ");
+}
 
 int Multiplication (int num) 
 {
-  int multi = 1;
-  for (int i = 1; i <= num; i++)
-  {
-    checked
+    int multi = 1;
+    for (int i = 1; i <= num; i++)
     {
-      multi = multi * i;
-    }
+        checked
+        {
+           multi = multi * i;
+        }
   
-  }
-  return multi;
+    }
+    return multi;
 }
