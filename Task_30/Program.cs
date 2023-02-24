@@ -4,16 +4,16 @@
 
 Console.WriteLine("Сколько элементов в массиве");
 int num = Convert.ToInt32(Console.ReadLine()); 
-int[] arr = NewArray(num);
+int[] arr = NewRandomArray(num,0,1);
 Console.WriteLine($"массив из {num} элементов ");
 PrintArray(arr);
 
-int[] NewArray(int num)
+int[] NewRandomArray(int num, int min, int max)
 {
     int[] arr = new int[num];
     for (int i = 0; i < num; i++)
     {
-       arr[i] = new Random().Next(0,2);
+       arr[i] = new Random().Next(min,max+1);
     }
     return arr;
 }
