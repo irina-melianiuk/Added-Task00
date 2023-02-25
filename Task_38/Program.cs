@@ -44,19 +44,13 @@ double FindMinElement (double [] arr)
             if (arr[i] < min) min = arr[i];
         }
         return min;
-    }
-
-double FindDifference (double max, double min)
-    {
-        double difference = Math.Round((max - min), 1, MidpointRounding.ToZero);;
-        return difference;
-    }
+   }
 
 double[] array = CreateArrayRndDouble(10,1,99);
 PrintArrayDouble(array);
 Console.WriteLine();
 double numMax = FindMaxElement (array);
 double numMin = FindMinElement (array);
-double result = FindDifference();
+double result = Math.Round((numMax-numMin), 1, MidpointRounding.ToZero);;
 Console.Write($"Разница между максимальным элементом массива {numMax} и минимальным {numMin} равна {result} .");
 
