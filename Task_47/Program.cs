@@ -8,7 +8,7 @@
 
 // 8 7,8 -7,1 9
 
-double[,] CreateMatrixRndDouble(int rows, int columns) //, int min, int max);
+double[,] CreateMatrixRndDouble(int rows, int columns)
 {
   double[,] matrix = new double[rows, columns]; // 0 , 1
   Random rnd = new Random();
@@ -18,8 +18,6 @@ double[,] CreateMatrixRndDouble(int rows, int columns) //, int min, int max);
     for (int j = 0; j < matrix.GetLength(1); j++) // columns
     {
       matrix[i, j] = Math.Round(rnd.Next(-100,100)*0.1, 1);
-      //Math.Round(rnd.NextDouble(), 1);
-      //rnd.NextDouble() * 100; //(min, max + 1);
     }
   }
   return matrix;
