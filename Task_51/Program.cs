@@ -36,7 +36,6 @@ void PrintMatrix(int[,] matrix)
     Console.WriteLine("|");
   }
 }
-
 int SumMatrix(int[,] array)
 {
   int sum = 0;
@@ -44,16 +43,16 @@ int SumMatrix(int[,] array)
   {
     for (int j = 0; j < array.GetLength(1); j++)
     {
-      if (i = j )
+      if (i == j )
       {
        sum = sum + array[i, j];
       }
     }
   }
-  
+  return sum;
 }
 
-int[,] array2d = CreateMatrixRndInt(5, 7, 1, 5);
+int[,] array2d = CreateMatrixRndInt(3, 3, 1, 5);
 PrintMatrix(array2d);
 int result = SumMatrix(array2d);
 Console.WriteLine($"Суммa элементов, находящихся на главной диагонали = {result}");
