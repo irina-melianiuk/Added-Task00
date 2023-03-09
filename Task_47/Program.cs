@@ -40,5 +40,5 @@ void PrintMatrix(double[,] matrix)
   }
 }
 
-double[,] array2d = CreateMatrixRndDouble(10, 11);
+double[,] array2d = CreateMatrixRndDouble(3,4);
 PrintMatrix(array2d);
