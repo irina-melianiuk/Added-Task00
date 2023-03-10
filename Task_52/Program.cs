@@ -27,33 +27,25 @@ void PrintMatrix(int[,] matrix)
     Console.Write("|");
     for (int j = 0; j < matrix.GetLength(1); j++)
     {
-      if (j < matrix.GetLength(1) - 1) Console.Write($"{matrix[i, j], 3}, ");
-      else Console.Write($"{matrix[i, j], 3}");
+      if (j < matrix.GetLength(1) - 1) Console.Write($"{matrix[i, j],3}, ");
+      else Console.Write($"{matrix[i, j],3}");
     }
     Console.WriteLine("|");
   }
 }
 
-double[] FindArithmeticMean(int[,] matrix)
-{
-    double[] arr = new double[matrix.GetLength(1)];
-    double sum = 0;
-    for (int i = 0; i < arr.Length; i++)
-    {
-        for (int j = 0; j < matrix.GetLength(1); j++)
-        {
-            
-          sum += matrix[j, i];
-        
-        }
-        arr[i] = sum / matrix.GetLength(0);
-        
-    }
-    return arr;
-}
-
 int[,] array2d = CreateMatrixRndInt(3, 4, 1, 5);
 PrintMatrix(array2d);
 Console.WriteLine();
-double[] findArithmeticMean = FindArithmeticMean(array2d);
-Console.WriteLine($"Среднее арифметическое каждого столбца: {findArithmeticMean}");
+
+Console.WriteLine($"Среднее арифметическое каждого столбца: ");
+for (int j = 0; j < array2d.GetLength(1); j++)
+{
+    double sum = 0;
+    for (int i = 0; i < array2d.GetLength(0); i++)
+    {
+        sum += array2d[i, j];
+    }
+    Console.Write($"{ Math.Round(sum / array2d.GetLength(0),1)};  ");
+}
+
