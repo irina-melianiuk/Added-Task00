@@ -21,7 +21,6 @@ int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
   return matrix;
 }
 
-
 void PrintMatrix(int[,] matrix)
 {
   for (int i = 0; i < matrix.GetLength(0); i++)
@@ -36,11 +35,34 @@ void PrintMatrix(int[,] matrix)
   }
 }
 
-
+int LineAmount(int[,] matrix, int i)
+{
+  int sum = matrix[i,0];
+  for (int j = 0; j < matrix.GetLength(1); j++)
+  {
+    sum += matrix[i, j];
+  }
+  return sum;
+}
+int NumberLineAmount(int[,] matrix)
+{
+  int lineNumber = 0;
+  int sumLine = LineAmount(matrix,0);
+  for (int i = 1; i < matrix.GetLength(0); i++)
+  {
+    int tempSumLine = LineAmount(matrix,i);
+    if (sumLine > tempSumLine)
+    {
+      sumLine = tempSumLine;
+      lineNumber = i;
+    }
+  }
+  return lineNumber;
+}
 
 int[,] array2d = CreateMatrixRndInt(3, 3, 1, 5);
 PrintMatrix(array2d);
 Console.WriteLine();
-int sumStringMatrix = SumStringMatrix(array2d);
-Console.Write($"Строка с наименьшей суммой элементов {sumStringMatrix}. ");
 
+int numberLineAmount = NumberLineAmount(array2d);
+Console.Write($"Строка с наименьшей суммой элементов {numberLineAmount + 1}. ");
